@@ -9,8 +9,8 @@ public class FoodObject : ScriptableObject
     public Sprite foodIcon;
     
     [Header("FoodTypes To Transform Into & Related Appliance")]
-    public ApplianceTypes[] applianceSolutions;
-    public FoodObject[] applianceTransformations;
+    public ApplianceTypes[] applianceSolutions = new ApplianceTypes[1];
+    public FoodObject[] applianceTransformations = new FoodObject[1];
 
     [Header("Default Transformation If Player Fails Puzzle")]
     public FoodObject failedTransformation;

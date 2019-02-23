@@ -4,10 +4,9 @@ using UnityEngine;
 
 public enum ApplianceTypes
 {
-    BLAZER,
-    FREEZER,
-    FIRER,
-    CHOPPER,
+    BURNER,
+    SHAKER,
+    GRINDER,
     STORAGE,
     FINALPIPE
 };
@@ -15,9 +14,8 @@ public enum ApplianceTypes
 public class ObjectController : MonoBehaviour
 {
     public ApplianceTypes applianceType;
-
-    public InventorySlotController[] objectSlots;
-    public InventorySlotController outputSlot;
+    
+    public InventorySlotController foodSlot;
 
     private Animator theAnimController;
     public Transform selectionCameraPosition;
@@ -61,53 +59,43 @@ public class ObjectController : MonoBehaviour
     */
     public virtual void ActivateObject()
     {
-        FoodObject outputSlotObject = outputSlot.GetSlotContents();
-        if (outputSlotObject == null)
+        FoodObject foodToCheck = foodSlot.GetSlotContents();
+        if (foodToCheck != null)
         {
-            FoodObject foodToCheck = objectSlots[0].GetSlotContents();
-            if (foodToCheck != null)
+            bool success = false;
+            int transformation = 0;
+
+            for (int i = 0; i < foodToCheck.applianceSolutions.Length; i++)
             {
-                bool success = false;
-                int transformation = 0;
+                if (foodToCheck.applianceSolutions[i] == applianceType)
+                {
+                    success = true;
+                    transformation = i;
+                }
+            }
 
-                for (int i = 0; i < foodToCheck.applianceSolutions.Length; i++)
-                {
-                    if (foodToCheck.applianceSolutions[i] == applianceType)
-                    {
-                        success = true;
-                        transformation = i;
-                    }
-                }
-
-                if (success)
-                {
-                    EventSuccess(foodToCheck.applianceTransformations[transformation]);
-                }
-                else
-                {
-                    EventFail(foodToCheck.failedTransformation);
-                }
+            if (success)
+            {
+                EventSuccess(foodToCheck.applianceTransformations[transformation]);
             }
             else
             {
-                Debug.Log("Error: Input Field Is Empty");
+                EventFail(foodToCheck.failedTransformation);
             }
         }
         else
         {
-            Debug.Log("Error: Output Field Is Full");
+            Debug.Log("Error: Input Field Is Empty");
         }
     }
 
     public void EventSuccess(FoodObject nextFoodObject)
     {
-        objectSlots[0].ClearSlotContents();
-        outputSlot.AddSlotContents(nextFoodObject);
+        foodSlot.AddSlotContents(nextFoodObject);
     }
 
     public void EventFail(FoodObject garbageFoodObject)
     {
-        objectSlots[0].ClearSlotContents();
-        outputSlot.AddSlotContents(garbageFoodObject);
+        foodSlot.AddSlotContents(garbageFoodObject);
     }
 }

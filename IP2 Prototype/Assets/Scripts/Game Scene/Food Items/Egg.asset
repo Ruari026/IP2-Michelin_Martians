@@ -13,9 +13,7 @@ MonoBehaviour:
   m_Name: Egg
   m_EditorClassIdentifier: 
   foodIcon: {fileID: 21300000, guid: 2fc2f0ebd0e397945b14ccbb05777729, type: 3}
-  textArea: 'NOTE: The ApplianceType at index 0 turns the food into the FoodObject
-    at index 0'
-  applianceSolutions: 00000000
+  applianceSolutions: 01000000
   applianceTransformations:
   - {fileID: 11400000, guid: 12fa5b063ac65b942927f10d178dce3b, type: 2}
   failedTransformation: {fileID: 11400000, guid: 91bccb8c8f43599499987626cc1bf67d,
