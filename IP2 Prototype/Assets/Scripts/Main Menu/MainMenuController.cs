@@ -19,6 +19,20 @@ public class MainMenuController : MonoBehaviour
         yield return new WaitForSeconds(GetComponent<AudioSource>().clip.length);
         Application.Quit();
     }
+    //once called this loads the main menu after the sound is played
+    IEnumerator DelayLoadMainMenu()
+    {
+        GetComponent<AudioSource>().Play();
+        yield return new WaitForSeconds(GetComponent<AudioSource>().clip.length);
+        SceneManager.LoadScene("MainMenu");
+    }
+    //once called this loads the settings menu after the sound is played
+    IEnumerator DelayLoadSettings()
+    {
+        GetComponent<AudioSource>().Play();
+        yield return new WaitForSeconds(GetComponent<AudioSource>().clip.length);
+        SceneManager.LoadScene("Settings");
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +44,16 @@ public class MainMenuController : MonoBehaviour
     public void ToMainGame()
     {
         StartCoroutine(DelayLoadMainGame());
+    }
+
+    public void ToMainMenu()
+    {
+        StartCoroutine(DelayLoadMainMenu());
+    }
+
+    public void ToSettings()
+    {
+        StartCoroutine(DelayLoadSettings());
     }
 
     public void QuitGame()
