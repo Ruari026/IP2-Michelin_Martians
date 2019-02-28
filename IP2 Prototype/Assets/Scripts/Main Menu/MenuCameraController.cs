@@ -4,8 +4,15 @@ using UnityEngine;
 
 public class MenuCameraController : MonoBehaviour
 {
+    public GameObject playingCameraPoint;
     public GameObject settingsCameraPoint;
     public GameObject quitCameraPoint;
+
+    public void MoveToPlay()
+    {
+        StartCoroutine(LerpToPosition(this.transform.position, playingCameraPoint.transform.position, 1));
+        StartCoroutine(LerpToRotation(this.transform.rotation, playingCameraPoint.transform.rotation, 1));
+    }
 
     public void MoveToSettings()
     {
