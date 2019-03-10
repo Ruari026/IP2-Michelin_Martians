@@ -4,8 +4,7 @@ using UnityEngine;
 
 public enum ApplianceTypes
 {
-    BURNER,
-    SHAKER,
+    SCRAMBLER,
     GRINDER,
     STORAGE,
     FINALPIPE
@@ -20,7 +19,10 @@ public class ObjectController : MonoBehaviour
     private Animator theAnimController;
     public Transform selectionCameraPosition;
 
-    
+    public GameObject applianceDefaultUi;
+    public GameObject appliancePuzzleUi;
+    public PuzzleClass appliancePuzzle;
+
     /*
     ==================================================
     Information Required For Player Camera
@@ -57,36 +59,47 @@ public class ObjectController : MonoBehaviour
     Puzzle Event Handling
     ==================================================
     */
-    public virtual void ActivateObject()
+    public void ActivatePuzzle()
     {
         FoodObject foodToCheck = foodSlot.GetSlotContents();
         if (foodToCheck != null)
         {
-            bool success = false;
-            int transformation = 0;
+            applianceDefaultUi.SetActive(false);
+            appliancePuzzleUi.SetActive(true);
+            foodSlot.SetSlotInteractionState(false);
 
-            for (int i = 0; i < foodToCheck.applianceSolutions.Length; i++)
-            {
-                if (foodToCheck.applianceSolutions[i] == applianceType)
-                {
-                    success = true;
-                    transformation = i;
-                }
-            }
+            appliancePuzzle.GetRelativeSolution(foodSlot.slotObject);
+        }
+    }
 
-            if (success)
+    public void CheckPuzzle()
+    {
+        FoodObject foodToCheck = foodSlot.GetSlotContents();
+
+        bool success = false;
+        int transformation = 0;
+
+        for (int i = 0; i < foodToCheck.applianceSolutions.Length; i++)
+        {
+            if (foodToCheck.applianceSolutions[i] == applianceType)
             {
-                EventSuccess(foodToCheck.applianceTransformations[transformation]);
+                success = true;
+                transformation = i;
             }
-            else
-            {
-                EventFail(foodToCheck.failedTransformation);
-            }
+        }
+
+        if (success && appliancePuzzle.CheckSolution())
+        {
+            EventSuccess(foodToCheck.applianceTransformations[transformation]);
         }
         else
         {
-            Debug.Log("Error: Input Field Is Empty");
+            EventFail(foodToCheck.failedTransformation);
         }
+
+        applianceDefaultUi.SetActive(true);
+        appliancePuzzleUi.SetActive(false);
+        foodSlot.SetSlotInteractionState(true);
     }
 
     public void EventSuccess(FoodObject nextFoodObject)

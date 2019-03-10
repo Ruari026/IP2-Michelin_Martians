@@ -16,8 +16,8 @@ public class SubmissionPipeController : ObjectController
         
     }
 
-    public override void ActivateObject()
+    public void ActivateObject()
     {
-        base.ActivateObject();
+        //base.ActivateObject();
     }
 }

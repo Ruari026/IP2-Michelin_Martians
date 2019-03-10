@@ -10,7 +10,7 @@ public class MainMenuController : MonoBehaviour
     {
         GetComponent<AudioSource>().Play();
         yield return new WaitForSeconds(GetComponent<AudioSource>().clip.length);
-        SceneManager.LoadScene("LayoutTest1");
+        SceneManager.LoadScene("Game Scene");
     }
     //once called this quits the game after the sound is played
     IEnumerator DelayLoadQuit()

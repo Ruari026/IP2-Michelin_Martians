@@ -74,6 +74,11 @@ public class InventorySlotController : MonoBehaviour
         }
     }
 
+    public void SetSlotInteractionState(bool newState)
+    {
+        this.gameObject.GetComponent<Button>().interactable = newState;
+    }
+
 
     /*
     ==================================================

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.29449484, g: 0.37262076, b: 0.58591825, a: 1}
+  m_IndirectSpecularColor: {r: 0.29449424, g: 0.37262008, b: 0.58591646, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1709,6 +1709,9 @@ MonoBehaviour:
   applianceType: 2
   foodSlot: {fileID: 0}
   selectionCameraPosition: {fileID: 121279936}
+  applianceDefaultUi: {fileID: 0}
+  appliancePuzzleUi: {fileID: 0}
+  appliancePuzzle: {fileID: 0}
 --- !u!65 &227930852
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2008,6 +2011,9 @@ MonoBehaviour:
   applianceType: 2
   foodSlot: {fileID: 0}
   selectionCameraPosition: {fileID: 480049809}
+  applianceDefaultUi: {fileID: 0}
+  appliancePuzzleUi: {fileID: 0}
+  appliancePuzzle: {fileID: 0}
 --- !u!95 &340577014
 Animator:
   serializedVersion: 3
@@ -10111,16 +10117,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1803090152501156315, guid: a7d061e423bf67f4c93a6f5eeaa5c8f4,
-        type: 3}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 534669904}
     - target: {fileID: 7222587181844868078, guid: a7d061e423bf67f4c93a6f5eeaa5c8f4,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1803090152501156315, guid: a7d061e423bf67f4c93a6f5eeaa5c8f4,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 534669904}
     - target: {fileID: 64969821, guid: a7d061e423bf67f4c93a6f5eeaa5c8f4, type: 3}
       propertyPath: InitialModule.startSpeed.minMaxState
       value: 3
@@ -15981,6 +15987,9 @@ MonoBehaviour:
   applianceType: 2
   foodSlot: {fileID: 0}
   selectionCameraPosition: {fileID: 4702680387741806132}
+  applianceDefaultUi: {fileID: 0}
+  appliancePuzzleUi: {fileID: 0}
+  appliancePuzzle: {fileID: 0}
 --- !u!65 &4702680387872874065
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16902,6 +16911,9 @@ MonoBehaviour:
   applianceType: 2
   foodSlot: {fileID: 0}
   selectionCameraPosition: {fileID: 4702680389069921081}
+  applianceDefaultUi: {fileID: 0}
+  appliancePuzzleUi: {fileID: 0}
+  appliancePuzzle: {fileID: 0}
 --- !u!95 &4702680389198900062
 Animator:
   serializedVersion: 3
@@ -16936,6 +16948,9 @@ MonoBehaviour:
   applianceType: 2
   foodSlot: {fileID: 0}
   selectionCameraPosition: {fileID: 4702680389136210988}
+  applianceDefaultUi: {fileID: 0}
+  appliancePuzzleUi: {fileID: 0}
+  appliancePuzzle: {fileID: 0}
 --- !u!65 &4702680389267287113
 BoxCollider:
   m_ObjectHideFlags: 0
