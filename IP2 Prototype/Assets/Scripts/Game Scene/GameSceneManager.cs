@@ -2,12 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameSceneManager : MonoBehaviour
 {
     [Header("Scene Starting Information")]
     public GameObject[] aliens;
-    public FoodObject[] solutions;
+    public FoodObject[] eggSolutions;
+    public GameObject eggTextUI;
+    public FoodObject[] soupSolutions;
+    public GameObject soupTextUI;
     public FoodObject sceneSolution;
     public InventorySlotController[] sceneStorageLocations;
     public FoodObject[] startingFoodObjects;
@@ -17,14 +21,16 @@ public class GameSceneManager : MonoBehaviour
     public GameObject sceneSolutionInfographic;
     public GameObject solutionCorrectGraphic;
     public GameObject solutionWrongGraphic;
-
-
+    
     [Header("Scene Timer")]
     public Text sceneTimerText;
     public float maxTimerValue;
     public float currentTimerValue;
     public GameObject endScreen;
     public Text endText;
+
+    [Header("PlayerInformation")]
+    public GameObject thePlayer;
     /*
     ======================================================================
     Handling Setting Up The Game Scene
@@ -38,16 +44,24 @@ public class GameSceneManager : MonoBehaviour
         currentTimerValue = maxTimerValue;
     }
 
-    private void Update()
-    {
-        RunTimer();
-    }
-
     public void SetSceneSolution()
     {
+        //Choosing the alien to serve
         int i = Random.Range(0, aliens.Length);
         aliens[i].SetActive(true);
-        sceneSolution = solutions[i];
+
+        //Choosing the recipe to make
+        int j = Random.Range(0, 1);
+        if (j == 0)
+        {
+            sceneSolution = eggSolutions[i];
+            eggTextUI.SetActive(true);
+        }
+        else
+        {
+            sceneSolution = soupSolutions[i];
+            soupTextUI.SetActive(true);
+        }
     }
     
     public void RandomizeFoodLoctions()
@@ -65,6 +79,36 @@ public class GameSceneManager : MonoBehaviour
                     sceneStorageLocations[spot].AddSlotContents(startingFoodObjects[i]);
                     placed = true;
                 }
+            }
+        }
+    }
+
+
+    /*
+    ======================================================================
+    Running The Scene
+    ======================================================================
+    */
+    private void Update()
+    {
+        //Level Timer Handling
+        RunTimer();
+
+       //Disabled For Play Testing
+        /*
+        //Returning To The Main Menu
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("Main Menu");
+        }
+        */
+
+        //Game Reset for playtesting
+        if (Input.GetKey(KeyCode.T))
+        {
+            if (Input.GetKeyDown(KeyCode.Alpha6))
+            {
+                SceneManager.LoadScene("Main Menu");
             }
         }
     }
@@ -114,6 +158,9 @@ public class GameSceneManager : MonoBehaviour
         float seconds = Mathf.FloorToInt(winTime - minutes * 60);
         string time = string.Format("{0:00}:{1:00}", minutes, seconds);
         endText.text = time;
+
+        yield return new WaitForSeconds(2.5f);
+        SceneManager.LoadScene("Main Menu");
     }
 
     IEnumerator ShowPlayerFail()

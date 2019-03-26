@@ -2143,6 +2143,9 @@ MonoBehaviour:
   applianceType: 2
   foodSlot: {fileID: 0}
   selectionCameraPosition: {fileID: 4702680389077899192}
+  applianceDefaultUi: {fileID: 0}
+  appliancePuzzleUi: {fileID: 0}
+  appliancePuzzle: {fileID: 0}
 --- !u!95 &4702680389225752543
 Animator:
   serializedVersion: 3
