@@ -24,7 +24,11 @@ public class GameSceneManager : MonoBehaviour
     public GameObject sceneSolutionInfographic;
     public GameObject solutionCorrectGraphic;
     public GameObject solutionWrongGraphic;
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> db0c0727bc0538b141f4a88c365fe7e78c319551
     [Header("Scene Timer")]
     private bool runTimer = false;
     public Text sceneTimerText;
@@ -33,7 +37,12 @@ public class GameSceneManager : MonoBehaviour
     public GameObject endScreen;
     public Text endText;
 
+<<<<<<< HEAD
 
+=======
+    [Header("PlayerInformation")]
+    public GameObject thePlayer;
+>>>>>>> db0c0727bc0538b141f4a88c365fe7e78c319551
     /*
     ======================================================================
     Handling Setting Up The Game Scene
@@ -46,9 +55,12 @@ public class GameSceneManager : MonoBehaviour
 
         currentTimerValue = maxTimerValue;
 
+<<<<<<< HEAD
         StartCoroutine(SceneStartAnim());
     }
 
+=======
+>>>>>>> db0c0727bc0538b141f4a88c365fe7e78c319551
     public void SetSceneSolution()
     {
         //Choosing the alien to serve
@@ -56,7 +68,11 @@ public class GameSceneManager : MonoBehaviour
         aliens[i].SetActive(true);
 
         //Choosing the recipe to make
+<<<<<<< HEAD
         int j = Random.Range(0, 3);
+=======
+        int j = Random.Range(0, 1);
+>>>>>>> db0c0727bc0538b141f4a88c365fe7e78c319551
         if (j == 0)
         {
             sceneSolution = eggSolutions[i];
@@ -116,6 +132,36 @@ public class GameSceneManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             SceneManager.LoadScene("Main Menu");
+        }
+    }
+
+
+    /*
+    ======================================================================
+    Running The Scene
+    ======================================================================
+    */
+    private void Update()
+    {
+        //Level Timer Handling
+        RunTimer();
+
+       //Disabled For Play Testing
+        /*
+        //Returning To The Main Menu
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("Main Menu");
+        }
+        */
+
+        //Game Reset for playtesting
+        if (Input.GetKey(KeyCode.T))
+        {
+            if (Input.GetKeyDown(KeyCode.Alpha6))
+            {
+                SceneManager.LoadScene("Main Menu");
+            }
         }
     }
 

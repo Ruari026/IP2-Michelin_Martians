@@ -13,8 +13,11 @@ MonoBehaviour:
   m_Name: Beastlack Egg-Fried
   m_EditorClassIdentifier: 
   foodIcon: {fileID: 21300000, guid: c034fcd3980cd2e448ff5e7cd890fae0, type: 3}
+<<<<<<< HEAD:IP2 Prototype/Assets/Scripts/Game Scene/Food Items/Fried Eggs/Beastlack Egg-Fried.asset
   foodSetting: 2
   foodToughness: 1
+=======
+>>>>>>> db0c0727bc0538b141f4a88c365fe7e78c319551:IP2 Prototype/Assets/Scripts/Game Scene/Food Items/Fried Eggs/Beastlack Egg-Fried.asset
   applianceSolutions: 
   applianceTransformations: []
   failedTransformation: {fileID: 11400000, guid: 91bccb8c8f43599499987626cc1bf67d,

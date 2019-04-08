@@ -2146,7 +2146,10 @@ MonoBehaviour:
   applianceDefaultUi: {fileID: 0}
   appliancePuzzleUi: {fileID: 0}
   appliancePuzzle: {fileID: 0}
+<<<<<<< HEAD
   objectHighlight: {fileID: 0}
+=======
+>>>>>>> db0c0727bc0538b141f4a88c365fe7e78c319551
 --- !u!95 &4702680389225752543
 Animator:
   serializedVersion: 3

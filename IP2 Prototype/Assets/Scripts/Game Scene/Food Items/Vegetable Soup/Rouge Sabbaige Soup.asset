@@ -13,8 +13,11 @@ MonoBehaviour:
   m_Name: Rouge Sabbaige Soup
   m_EditorClassIdentifier: 
   foodIcon: {fileID: 21300000, guid: d5565585ff367944cb518f332b726b3d, type: 3}
+<<<<<<< HEAD
   foodSetting: 0
   foodToughness: 3
+=======
+>>>>>>> db0c0727bc0538b141f4a88c365fe7e78c319551
   applianceSolutions: 
   applianceTransformations: []
   failedTransformation: {fileID: 11400000, guid: 91bccb8c8f43599499987626cc1bf67d,

@@ -13,8 +13,11 @@ MonoBehaviour:
   m_Name: Charcoal
   m_EditorClassIdentifier: 
   foodIcon: {fileID: 21300000, guid: 9be6630037b93894ca38e681478acf54, type: 3}
+<<<<<<< HEAD:IP2 Prototype/Assets/Scripts/Game Scene/Food Items/Charcoal.asset
   foodSetting: 2
   foodToughness: 4
+=======
+>>>>>>> db0c0727bc0538b141f4a88c365fe7e78c319551:IP2 Prototype/Assets/Scripts/Game Scene/Food Items/Charcoal.asset
   applianceSolutions: 
   applianceTransformations: []
   failedTransformation: {fileID: 11400000}
