@@ -7,7 +7,12 @@ using UnityEngine;
 public class FoodObject : ScriptableObject
 {
     public Sprite foodIcon;
-    
+
+    [Header("Food Details")]
+    public CookingSetting foodSetting;
+    public FoodToughness foodToughness;
+
+
     [Header("FoodTypes To Transform Into & Related Appliance")]
     public ApplianceTypes[] applianceSolutions = new ApplianceTypes[1];
     public FoodObject[] applianceTransformations = new FoodObject[1];
@@ -15,3 +20,19 @@ public class FoodObject : ScriptableObject
     [Header("Default Transformation If Player Fails Puzzle")]
     public FoodObject failedTransformation;
 }
+
+public enum CookingSetting
+{
+    LOW,
+    MED,
+    HIGH
+};
+
+public enum FoodToughness
+{
+    SOFT,
+    WEAK,
+    TOUGH,
+    STRONG,
+    HARD
+};

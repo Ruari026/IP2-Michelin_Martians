@@ -5,6 +5,24 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuController : MonoBehaviour
 {
+    // Start is called before the first frame update
+    void Start()
+    {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+    }
+    private void Update()
+    {
+        //Game Reset for playtesting
+        if (Input.GetKey(KeyCode.T))
+        {
+            if (Input.GetKeyDown(KeyCode.Alpha6))
+            {
+                SceneManager.LoadScene("Main Menu");
+            }
+        }
+    }
+
     //once called this loads the main game after the sound is played
     IEnumerator DelayLoadMainGame()
     {
@@ -34,13 +52,12 @@ public class MainMenuController : MonoBehaviour
         SceneManager.LoadScene("Settings");
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
-    }
 
+    /*
+    ====================================================================================================
+    Scene Changing
+    ====================================================================================================
+    */
     public void ToMainGame()
     {
         StartCoroutine(DelayLoadMainGame());

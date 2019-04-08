@@ -90,7 +90,7 @@ public class ScramblerPuzzleScript : PuzzleClass
         }
     }
 
-    public void ResetPuzzle()
+    public override void ResetPuzzle()
     {
         for (int i = 0; i < puzzleSliders.Length; i++)
         {

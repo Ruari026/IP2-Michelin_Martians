@@ -280,6 +280,10 @@ MonoBehaviour:
   applianceType: 2
   foodSlot: {fileID: 0}
   selectionCameraPosition: {fileID: 4254462892599348761}
+  applianceDefaultUi: {fileID: 0}
+  appliancePuzzleUi: {fileID: 0}
+  appliancePuzzle: {fileID: 0}
+  objectHighlight: {fileID: 0}
 --- !u!95 &4254462892437956924
 Animator:
   serializedVersion: 3
@@ -1530,6 +1534,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 9024672929595036918, guid: 8dd0232665f21194bb58dd97ff6d237f,
+        type: 3}
+      propertyPath: slotIcon
+      value: 
+      objectReference: {fileID: 6878166829062139528}
     - target: {fileID: 9024672929595036919, guid: 8dd0232665f21194bb58dd97ff6d237f,
         type: 3}
       propertyPath: m_TargetGraphic
@@ -1540,11 +1549,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 6878166827881839057}
-    - target: {fileID: 9024672929595036918, guid: 8dd0232665f21194bb58dd97ff6d237f,
-        type: 3}
-      propertyPath: slotIcon
-      value: 
-      objectReference: {fileID: 6878166829062139528}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8dd0232665f21194bb58dd97ff6d237f, type: 3}
 --- !u!224 &6878166827881839058 stripped
@@ -1706,6 +1710,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 9024672929595036918, guid: 8dd0232665f21194bb58dd97ff6d237f,
+        type: 3}
+      propertyPath: slotIcon
+      value: 
+      objectReference: {fileID: 5147078860796070260}
     - target: {fileID: 9024672929595036919, guid: 8dd0232665f21194bb58dd97ff6d237f,
         type: 3}
       propertyPath: m_TargetGraphic
@@ -1716,11 +1725,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 5147078861748837933}
-    - target: {fileID: 9024672929595036918, guid: 8dd0232665f21194bb58dd97ff6d237f,
-        type: 3}
-      propertyPath: slotIcon
-      value: 
-      objectReference: {fileID: 5147078860796070260}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8dd0232665f21194bb58dd97ff6d237f, type: 3}
 --- !u!114 &5147078861748837933 stripped
@@ -1882,6 +1886,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 9024672929595036918, guid: 8dd0232665f21194bb58dd97ff6d237f,
+        type: 3}
+      propertyPath: slotIcon
+      value: 
+      objectReference: {fileID: 2695100852875581010}
     - target: {fileID: 9024672929595036919, guid: 8dd0232665f21194bb58dd97ff6d237f,
         type: 3}
       propertyPath: m_TargetGraphic
@@ -1892,11 +1901,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2695100851648348427}
-    - target: {fileID: 9024672929595036918, guid: 8dd0232665f21194bb58dd97ff6d237f,
-        type: 3}
-      propertyPath: slotIcon
-      value: 
-      objectReference: {fileID: 2695100852875581010}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8dd0232665f21194bb58dd97ff6d237f, type: 3}
 --- !u!114 &2695100851648348427 stripped
@@ -2058,16 +2062,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 9024672929595036919, guid: 8dd0232665f21194bb58dd97ff6d237f,
-        type: 3}
-      propertyPath: m_TargetGraphic
-      value: 
-      objectReference: {fileID: 2434043422717033985}
-    - target: {fileID: 9024672929595036919, guid: 8dd0232665f21194bb58dd97ff6d237f,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 2434043422717033991}
     - target: {fileID: 9024672929595036918, guid: 8dd0232665f21194bb58dd97ff6d237f,
         type: 3}
       propertyPath: slotObject
@@ -2090,6 +2084,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 2fc2f0ebd0e397945b14ccbb05777729,
         type: 3}
+    - target: {fileID: 9024672929595036919, guid: 8dd0232665f21194bb58dd97ff6d237f,
+        type: 3}
+      propertyPath: m_TargetGraphic
+      value: 
+      objectReference: {fileID: 2434043422717033985}
+    - target: {fileID: 9024672929595036919, guid: 8dd0232665f21194bb58dd97ff6d237f,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2434043422717033991}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8dd0232665f21194bb58dd97ff6d237f, type: 3}
 --- !u!224 &2434043422717033988 stripped
@@ -2251,6 +2255,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 9024672929595036918, guid: 8dd0232665f21194bb58dd97ff6d237f,
+        type: 3}
+      propertyPath: slotIcon
+      value: 
+      objectReference: {fileID: 2077135977427506336}
     - target: {fileID: 9024672929595036919, guid: 8dd0232665f21194bb58dd97ff6d237f,
         type: 3}
       propertyPath: m_TargetGraphic
@@ -2261,11 +2270,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2077135978641359865}
-    - target: {fileID: 9024672929595036918, guid: 8dd0232665f21194bb58dd97ff6d237f,
-        type: 3}
-      propertyPath: slotIcon
-      value: 
-      objectReference: {fileID: 2077135977427506336}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8dd0232665f21194bb58dd97ff6d237f, type: 3}
 --- !u!224 &2077135978641359866 stripped
@@ -2427,6 +2431,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 9024672929595036918, guid: 8dd0232665f21194bb58dd97ff6d237f,
+        type: 3}
+      propertyPath: slotIcon
+      value: 
+      objectReference: {fileID: 1407598765483847524}
     - target: {fileID: 9024672929595036919, guid: 8dd0232665f21194bb58dd97ff6d237f,
         type: 3}
       propertyPath: m_TargetGraphic
@@ -2437,11 +2446,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1407598766695610429}
-    - target: {fileID: 9024672929595036918, guid: 8dd0232665f21194bb58dd97ff6d237f,
-        type: 3}
-      propertyPath: slotIcon
-      value: 
-      objectReference: {fileID: 1407598765483847524}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8dd0232665f21194bb58dd97ff6d237f, type: 3}
 --- !u!224 &1407598766695610430 stripped
@@ -2603,6 +2607,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 9024672929595036918, guid: 8dd0232665f21194bb58dd97ff6d237f,
+        type: 3}
+      propertyPath: slotIcon
+      value: 
+      objectReference: {fileID: 767867903050477608}
     - target: {fileID: 9024672929595036919, guid: 8dd0232665f21194bb58dd97ff6d237f,
         type: 3}
       propertyPath: m_TargetGraphic
@@ -2613,11 +2622,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 767867903967324017}
-    - target: {fileID: 9024672929595036918, guid: 8dd0232665f21194bb58dd97ff6d237f,
-        type: 3}
-      propertyPath: slotIcon
-      value: 
-      objectReference: {fileID: 767867903050477608}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8dd0232665f21194bb58dd97ff6d237f, type: 3}
 --- !u!224 &767867903967324018 stripped
@@ -2779,6 +2783,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 9024672929595036918, guid: 8dd0232665f21194bb58dd97ff6d237f,
+        type: 3}
+      propertyPath: slotIcon
+      value: 
+      objectReference: {fileID: 142952471650800482}
     - target: {fileID: 9024672929595036919, guid: 8dd0232665f21194bb58dd97ff6d237f,
         type: 3}
       propertyPath: m_TargetGraphic
@@ -2789,11 +2798,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 142952470456861755}
-    - target: {fileID: 9024672929595036918, guid: 8dd0232665f21194bb58dd97ff6d237f,
-        type: 3}
-      propertyPath: slotIcon
-      value: 
-      objectReference: {fileID: 142952471650800482}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8dd0232665f21194bb58dd97ff6d237f, type: 3}
 --- !u!114 &142952470456861755 stripped
@@ -2955,6 +2959,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 9024672929595036918, guid: 8dd0232665f21194bb58dd97ff6d237f,
+        type: 3}
+      propertyPath: slotIcon
+      value: 
+      objectReference: {fileID: 163077535030617902}
     - target: {fileID: 9024672929595036919, guid: 8dd0232665f21194bb58dd97ff6d237f,
         type: 3}
       propertyPath: m_TargetGraphic
@@ -2965,11 +2974,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 163077534110625911}
-    - target: {fileID: 9024672929595036918, guid: 8dd0232665f21194bb58dd97ff6d237f,
-        type: 3}
-      propertyPath: slotIcon
-      value: 
-      objectReference: {fileID: 163077535030617902}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8dd0232665f21194bb58dd97ff6d237f, type: 3}
 --- !u!224 &163077534110625908 stripped

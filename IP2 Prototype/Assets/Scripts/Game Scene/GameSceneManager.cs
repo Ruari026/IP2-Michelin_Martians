@@ -2,12 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameSceneManager : MonoBehaviour
 {
+    [Header("Player Information")]
+    public GameObject thePlayerController;
+
     [Header("Scene Starting Information")]
     public GameObject[] aliens;
-    public FoodObject[] solutions;
+    public FoodObject[] eggSolutions;
+    public GameObject eggTextUI;
+    public FoodObject[] soupSolutions;
+    public GameObject soupTextUI;
     public FoodObject sceneSolution;
     public InventorySlotController[] sceneStorageLocations;
     public FoodObject[] startingFoodObjects;
@@ -18,13 +25,15 @@ public class GameSceneManager : MonoBehaviour
     public GameObject solutionCorrectGraphic;
     public GameObject solutionWrongGraphic;
 
-
     [Header("Scene Timer")]
+    private bool runTimer = false;
     public Text sceneTimerText;
     public float maxTimerValue;
     public float currentTimerValue;
     public GameObject endScreen;
     public Text endText;
+
+
     /*
     ======================================================================
     Handling Setting Up The Game Scene
@@ -36,18 +45,28 @@ public class GameSceneManager : MonoBehaviour
         RandomizeFoodLoctions();
 
         currentTimerValue = maxTimerValue;
-    }
 
-    private void Update()
-    {
-        RunTimer();
+        StartCoroutine(SceneStartAnim());
     }
 
     public void SetSceneSolution()
     {
+        //Choosing the alien to serve
         int i = Random.Range(0, aliens.Length);
         aliens[i].SetActive(true);
-        sceneSolution = solutions[i];
+
+        //Choosing the recipe to make
+        int j = Random.Range(0, 3);
+        if (j == 0)
+        {
+            sceneSolution = eggSolutions[i];
+            eggTextUI.SetActive(true);
+        }
+        else
+        {
+            sceneSolution = soupSolutions[i];
+            soupTextUI.SetActive(true);
+        }
     }
     
     public void RandomizeFoodLoctions()
@@ -66,6 +85,37 @@ public class GameSceneManager : MonoBehaviour
                     placed = true;
                 }
             }
+        }
+    }
+
+    private IEnumerator SceneStartAnim()
+    {
+        CameraController playerCC = thePlayerController.GetComponent<CameraController>();
+
+        yield return new WaitForSeconds(3);
+
+        playerCC.StartCoroutine(playerCC.MoveCamera(playerCC.defaultPosition.position, playerCC.defaultPosition.rotation, playerCC.zoomTime));
+
+        yield return new WaitForSeconds(playerCC.zoomTime);
+
+        playerCC.SetPlayerInputState(true);
+        runTimer = true;
+    }
+
+
+    /*
+    ======================================================================
+    Running The Scene
+    ======================================================================
+    */
+    private void Update()
+    {
+        //Level Timer Handling
+        RunTimer();
+        //Returning To The Main Menu
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("Main Menu");
         }
     }
 
@@ -114,6 +164,9 @@ public class GameSceneManager : MonoBehaviour
         float seconds = Mathf.FloorToInt(winTime - minutes * 60);
         string time = string.Format("{0:00}:{1:00}", minutes, seconds);
         endText.text = time;
+
+        yield return new WaitForSeconds(2.5f);
+        SceneManager.LoadScene("Main Menu");
     }
 
     IEnumerator ShowPlayerFail()
@@ -137,13 +190,15 @@ public class GameSceneManager : MonoBehaviour
     */
     private void RunTimer()
     {
-        currentTimerValue -= Time.deltaTime;
+        if (runTimer)
+        {
+            currentTimerValue -= Time.deltaTime;
 
-        float minutes = Mathf.FloorToInt(currentTimerValue / 60);
-        float seconds = Mathf.FloorToInt(currentTimerValue - minutes * 60);
+            float minutes = Mathf.FloorToInt(currentTimerValue / 60);
+            float seconds = Mathf.FloorToInt(currentTimerValue - minutes * 60);
 
-        string time = string.Format("{0:00}:{1:00}", minutes, seconds);
-
-        sceneTimerText.text = time;
+            string time = string.Format("{0:00}:{1:00}", minutes, seconds);
+            sceneTimerText.text = time;
+        }
     }
 }

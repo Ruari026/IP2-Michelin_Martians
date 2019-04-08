@@ -21,9 +21,12 @@ public class CameraController : MonoBehaviour
     private ObjectController selectedObject;
     private Transform targetPosition;
 
+    //Other Control Variables
+    private bool canInput = false;
+
     void Start()
     {
-        currentOrbitRange = maxOrbitRange;
+        currentOrbitRange = Vector2.zero;
     }
 
     // Update is called once per frame
@@ -47,13 +50,23 @@ public class CameraController : MonoBehaviour
 
     /*
     ============================================================
+    Controlling Player Input Capabilities
+    ============================================================
+    */
+    public void SetPlayerInputState(bool newInputState)
+    {
+        canInput = newInputState;
+    }
+
+
+    /*
+    ============================================================
     Handles When The Player Is Looking Round The Environment
     ============================================================
     */
     private void EnvironmentControls()
     {
-        //Input for selecting appliances
-        if (Input.GetMouseButtonDown(0))
+        if (canInput)
         {
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -61,28 +74,23 @@ public class CameraController : MonoBehaviour
             {
                 if (hit.transform.gameObject.tag == "Selectable Object")
                 {
-                    //Getting What Object The Player Has Clicked On
-                    Debug.Log("Selected Object: " + hit.transform.name);
-                    selectedObject = hit.transform.gameObject.GetComponent<ObjectController>();
-                    targetPosition = selectedObject.SelectedObject();
+                    //Checking if the cursor is hovering over an interactable object
+                    Debug.Log("Highlighting " + hit.transform.name);
+                    hit.transform.gameObject.GetComponent<ObjectController>().SetHighlightVisibility(true);
 
-                    StartCoroutine(MoveCamera(targetPosition.position, targetPosition.rotation, zoomTime));
+                    //Input for selecting appliances
+                    if (Input.GetMouseButtonDown(0))
+                    {
+                        //Getting What Object The Player Has Clicked On
+                        Debug.Log("Selected Object: " + hit.transform.name);
+                        selectedObject = hit.transform.gameObject.GetComponent<ObjectController>();
+                        targetPosition = selectedObject.SelectedObject();
+
+                        StartCoroutine(MoveCamera(targetPosition.position, targetPosition.rotation, zoomTime));
+                    }
                 }
             }
         }
-
-        //Input For Rotating The Camera
-        /*if (Input.GetAxis("Horizontal") != 0)
-        {
-            Vector3 newRotation = defaultPosition.eulerAngles;
-            newRotation.y += Input.GetAxis("Horizontal") * Time.deltaTime * cameraRotationSpeed;
-            if (newRotation.y > 180)
-            {
-                newRotation.y -= 360;
-            }
-            newRotation.y = Mathf.Clamp(newRotation.y, -50, 50);
-            defaultPosition.eulerAngles = newRotation;
-        }*/
     }
 
     /*
@@ -92,15 +100,18 @@ public class CameraController : MonoBehaviour
     */
     private void ObjectControls()
     {
-        //Input for moving back to the center of the room
-        if (Input.GetMouseButtonDown(1))
+        if (canInput)
         {
-            Debug.Log("Moving Back To Room Center");
-            selectedObject.ResetObject();
-            selectedObject = null;
-            targetPosition = null;
+            //Input for moving back to the center of the room
+            if (Input.GetMouseButtonDown(1))
+            {
+                Debug.Log("Moving Back To Room Center");
+                selectedObject.ResetObject();
+                selectedObject = null;
+                targetPosition = null;
 
-            StartCoroutine(MoveCamera(defaultPosition.position, defaultPosition.rotation, zoomTime));
+                StartCoroutine(MoveCamera(defaultPosition.position, defaultPosition.rotation, zoomTime));
+            }
         }
     }
 
@@ -134,10 +145,10 @@ public class CameraController : MonoBehaviour
 
     /*
     ============================================================
-    Handles When The Camera Is Moving To/ From An Object
+    Handles When The Camera Is Moving To & From An Object
     ============================================================
     */
-    private IEnumerator MoveCamera(Vector3 targetPosition, Quaternion targetRotation, float moveTime)
+    public IEnumerator MoveCamera(Vector3 targetPosition, Quaternion targetRotation, float moveTime)
     {
         isInTransition = true;
 

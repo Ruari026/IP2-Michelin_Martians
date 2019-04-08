@@ -1,0 +1,222 @@
+fileFormatVersion: 2
+guid: a46fae2b701b21c4fa44eb8d67647e9c
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: battery_1
+    100002: battery_2
+    100004: body
+    100006: //RootNode
+    100008: dark_ice_link_bottom
+    100010: dark_ice_link_bottom 1
+    100012: device
+    100014: dsic
+    100016: emission
+    100018: emission 1
+    100020: emission_flow
+    100022: emmision
+    100024: metal
+    100026: metal 1
+    100028: metal 2
+    100030: metal 3
+    100032: metal_screen
+    100034: paint
+    100036: paint 1
+    100038: paint 2
+    100040: paint 3
+    100042: paint 4
+    100044: screen_:Screen
+    100046: screen_emmision
+    100048: spere_bottom
+    100050: spere_bottom 1
+    100052: sphere
+    100054: sphere_top
+    100056: sphere_top 1
+    100058: textured_device:aiSkyDomeLight1
+    400000: battery_1
+    400002: battery_2
+    400004: body
+    400006: //RootNode
+    400008: dark_ice_link_bottom
+    400010: dark_ice_link_bottom 1
+    400012: device
+    400014: dsic
+    400016: emission
+    400018: emission 1
+    400020: emission_flow
+    400022: emmision
+    400024: metal
+    400026: metal 1
+    400028: metal 2
+    400030: metal 3
+    400032: metal_screen
+    400034: paint
+    400036: paint 1
+    400038: paint 2
+    400040: paint 3
+    400042: paint 4
+    400044: screen_:Screen
+    400046: screen_emmision
+    400048: spere_bottom
+    400050: spere_bottom 1
+    400052: sphere
+    400054: sphere_top
+    400056: sphere_top 1
+    400058: textured_device:aiSkyDomeLight1
+    2100000: textured_device_luminence
+    2100002: textured_device_paint
+    2100004: textured_device_metal
+    2100006: textured_device_Dark_ice
+    2300000: dark_ice_link_bottom
+    2300002: dark_ice_link_bottom 1
+    2300004: emission
+    2300006: emission 1
+    2300008: emission_flow
+    2300010: emmision
+    2300012: metal
+    2300014: metal 1
+    2300016: metal 2
+    2300018: metal 3
+    2300020: metal_screen
+    2300022: paint
+    2300024: paint 1
+    2300026: paint 2
+    2300028: paint 3
+    2300030: paint 4
+    2300032: screen_emmision
+    2300034: spere_bottom
+    2300036: spere_bottom 1
+    2300038: sphere
+    2300040: sphere_top
+    2300042: sphere_top 1
+    3300000: dark_ice_link_bottom
+    3300002: dark_ice_link_bottom 1
+    3300004: emission
+    3300006: emission 1
+    3300008: emission_flow
+    3300010: emmision
+    3300012: metal
+    3300014: metal 1
+    3300016: metal 2
+    3300018: metal 3
+    3300020: metal_screen
+    3300022: paint
+    3300024: paint 1
+    3300026: paint 2
+    3300028: paint 3
+    3300030: paint 4
+    3300032: screen_emmision
+    3300034: spere_bottom
+    3300036: spere_bottom 1
+    3300038: sphere
+    3300040: sphere_top
+    3300042: sphere_top 1
+    4300000: emission
+    4300002: paint
+    4300004: metal
+    4300006: spere_bottom
+    4300008: sphere_top
+    4300010: dark_ice_link_bottom
+    4300012: emission
+    4300014: sphere
+    4300016: metal
+    4300018: paint
+    4300020: paint
+    4300022: emmision
+    4300024: metal
+    4300026: metal_screen
+    4300028: screen_emmision
+    4300030: paint
+    4300032: emission_flow
+    4300034: paint
+    4300036: metal
+    4300038: spere_bottom
+    4300040: sphere_top
+    4300042: dark_ice_link_bottom
+    2186277476908879412: ImportLogs
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.01
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
