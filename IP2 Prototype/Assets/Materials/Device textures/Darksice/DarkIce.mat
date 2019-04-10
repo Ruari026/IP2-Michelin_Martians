@@ -43,11 +43,7 @@ Material:
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: 01c23a710b3c1f6499e7e356bfa726df, type: 3}
         m_Scale: {x: 1, y: 1}
-<<<<<<< HEAD:IP2 Prototype/Assets/Materials/Device textures/Darksice/DarkIce.mat
-        m_Offset: {x: 1.5921515, y: 0.84352326}
-=======
-        m_Offset: {x: 0.014145255, y: 1.8123937}
->>>>>>> db0c0727bc0538b141f4a88c365fe7e78c319551:IP2 Prototype/Assets/Materials/Device textures/Darksice/DarkIce.mat
+        m_Offset: {x: 1.185502, y: 1.6808716}
     - _MetallicGlossMap:
         m_Texture: {fileID: 2800000, guid: e152a528f8fbe0041b33502ab3fa485b, type: 3}
         m_Scale: {x: 1, y: 1}

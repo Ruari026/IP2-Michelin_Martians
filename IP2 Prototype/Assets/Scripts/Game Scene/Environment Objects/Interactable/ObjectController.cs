@@ -20,7 +20,7 @@ public class ObjectController : MonoBehaviour
     
     public InventorySlotController foodSlot;
 
-    public Animator theAnimController;
+    private Animator theAnimController;
     public Transform selectionCameraPosition;
 
     public GameObject applianceDefaultUi;
@@ -48,12 +48,11 @@ public class ObjectController : MonoBehaviour
     */
     public Transform SelectedObject()
     {
-        if (theAnimController == null)
+        theAnimController = this.GetComponent<Animator>();
+        if (theAnimController != null)
         {
-            this.theAnimController = this.GetComponent<Animator>();
+            this.GetComponent<Animator>().SetBool("Opened", true);
         }
-
-        theAnimController.SetBool("Opened", true);
 
         return selectionCameraPosition;
     }
@@ -66,12 +65,10 @@ public class ObjectController : MonoBehaviour
     */
     public void ResetObject()
     {
-        if (theAnimController == null)
+        if (theAnimController != null)
         {
-            this.theAnimController = this.GetComponent<Animator>();
+            this.GetComponent<Animator>().SetBool("Opened", false);
         }
-
-        theAnimController.SetBool("Opened", false);
     }
 
 

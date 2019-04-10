@@ -13,11 +13,8 @@ MonoBehaviour:
   m_Name: Bartlack Egg
   m_EditorClassIdentifier: 
   foodIcon: {fileID: 21300000, guid: b4a7e1c402b817a4cb444257bb2703a7, type: 3}
-<<<<<<< HEAD:IP2 Prototype/Assets/Scripts/Game Scene/Food Items/Eggs/Bartlack Egg.asset
   foodSetting: 1
   foodToughness: 0
-=======
->>>>>>> db0c0727bc0538b141f4a88c365fe7e78c319551:IP2 Prototype/Assets/Scripts/Game Scene/Food Items/Eggs/Bartlack Egg.asset
   applianceSolutions: 00000000
   applianceTransformations:
   - {fileID: 11400000, guid: 12fa5b063ac65b942927f10d178dce3b, type: 2}

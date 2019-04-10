@@ -80,7 +80,6 @@ public class BlazerPuzzleScript : PuzzleClass, IPointerDownHandler, IPointerUpHa
     {
         if (hold == currentSolution[i])
         {
-<<<<<<< HEAD
             LED[i].GetComponent<Image>().color = new Color32(0, 0, 255, 255);
             
             if (overallTimer < maxTime && overallTimer > minTime)
@@ -90,11 +89,6 @@ public class BlazerPuzzleScript : PuzzleClass, IPointerDownHandler, IPointerUpHa
                 LED[i].GetComponent<Image>().color = new Color32(0, 255, 0, 255);
             }
             i++;
-=======
-            LED[i].GetComponent<Image>().color = new Color32(0, 255, 0, 255);
-            i++;
-            score++;
->>>>>>> db0c0727bc0538b141f4a88c365fe7e78c319551
             timer = 0f;
             startTimer = false;
             Debug.Log("Correct");
@@ -103,25 +97,15 @@ public class BlazerPuzzleScript : PuzzleClass, IPointerDownHandler, IPointerUpHa
         {
             LED[i].GetComponent<Image>().color = new Color32(255, 0, 0, 255);
             i++;
-<<<<<<< HEAD
             
-=======
-            score++;
->>>>>>> db0c0727bc0538b141f4a88c365fe7e78c319551
             timer = 0f;
             startTimer = false;
             Debug.Log("Wrong");
         }
 
-<<<<<<< HEAD
         if (i == 4)
         {
             if (overallTimer < maxTime && overallTimer > minTime && score == 4)
-=======
-        if (score == 4)
-        {
-            if (overallTimer < maxTime && overallTimer > minTime)
->>>>>>> db0c0727bc0538b141f4a88c365fe7e78c319551
             {
                 activated = false;
                 parentController.CheckPuzzle(true);
@@ -209,13 +193,10 @@ public class BlazerPuzzleScript : PuzzleClass, IPointerDownHandler, IPointerUpHa
                 overallTimer = 0;
                 timerSliderFill.color = Color.green;
             }
-<<<<<<< HEAD
             else if ((int)overallTimer >=0 && (int)overallTimer <15)
             {
                 timerSliderFill.color = Color.green;
             }
-=======
->>>>>>> db0c0727bc0538b141f4a88c365fe7e78c319551
         }
     }
 }
