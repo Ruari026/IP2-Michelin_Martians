@@ -41,7 +41,15 @@ public class Puzzle3 : MonoBehaviour
     public int[] currentSolution;
     public bool[] currentDirectionSolution;
     public int[] playerSolution;
+    public int playerPrevSolution = 0;
     public bool[] playerDirectionSolution;
+
+    public GameObject pivotPoint;
+
+
+    bool mouseR;
+    bool mouseL;
+
 
     // Start is called before the first frame update
     void Start()
@@ -50,15 +58,16 @@ public class Puzzle3 : MonoBehaviour
         currentDirectionSolution = sol1Directions;
     }
 
+
     // Update is called once per frame
     void Update()
     {
-        if(rotating == true)
+        
+        if (rotating == true)
         {
-            if (turnableObject.transform.eulerAngles.z <= 360 && turnableObject.transform.eulerAngles.z >= -360)
-            {
-                turnableObject.transform.Rotate(0, 0, -(Input.GetAxis("Mouse X")), Space.World);
-            }
+            float angle = Quaternion.FromToRotation(mouseStartPos - pivotPoint.transform.position, Input.mousePosition - pivotPoint.transform.position).eulerAngles.z;
+
+            turnableObject.transform.localEulerAngles = new Vector3(0, 0, angle);
         }
 
         if (Input.GetMouseButtonDown(0))
@@ -94,8 +103,11 @@ public class Puzzle3 : MonoBehaviour
                     break;
                 }
             }
+            CheckAnswer();
         }
         //used to check the direction that the mouse is moving therefore the direction of rotation
+
+/*
         if(mouseCheck == true)
         {
             if (mouseEndPos.x < mouseStartPos.x)
@@ -115,18 +127,19 @@ public class Puzzle3 : MonoBehaviour
                 CheckAnswer();
             }
         }
-
+        */
     }
 
     public void CheckAnswer()
     {
         playerSolution[i] = rotateAmount;
-        if(turningL == true)
+        if(playerSolution[i] < playerPrevSolution)
         {
             turningL = false;
+            playerPrevSolution = playerSolution[i];
             playerDirectionSolution[i] = false;
         }
-        else if(turningR == true)
+        else if(playerSolution[i] > playerPrevSolution)
         {
             turningR = false;
             playerDirectionSolution[i] = true;
@@ -159,5 +172,4 @@ public class Puzzle3 : MonoBehaviour
             }
         }
     }
-
 }

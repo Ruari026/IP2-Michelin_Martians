@@ -28,6 +28,7 @@ public class ObjectController : MonoBehaviour
     public PuzzleClass appliancePuzzle;
 
     public GameObject objectHighlight;
+    public float objectHighlightWidth = 0.005f;
 
 
     private void Start()
@@ -80,6 +81,7 @@ public class ObjectController : MonoBehaviour
     public void ActivatePuzzle()
     {
         FoodObject foodToCheck = foodSlot.GetSlotContents();
+
         if (foodToCheck != null)
         {
             applianceDefaultUi.SetActive(false);

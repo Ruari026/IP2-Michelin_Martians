@@ -1,0 +1,184 @@
+fileFormatVersion: 2
+guid: 9dbdc94566e225940bab45289b9ad12b
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: combiner_core_power_core
+    100004: combiner_main_body_luminance
+    100006: combiner_main_body_paint
+    100008: combiner_metal_main_body
+    100010: combiner_power_core_bateries_battery2_core2
+    100012: combiner_power_core_bateries_battery2_luminance
+    100014: combiner_power_core_bateries_battery2_metal
+    100016: combiner_power_core_bateries_paint_battery2
+    100018: combiner_power_core_battery1_bateries_core2
+    100020: combiner_power_core_battery1_bateries_luminance
+    100022: combiner_power_core_battery1_bateries_metal
+    100024: combiner_power_core_paint_battery1_bateries
+    100026: screen_2_thin:screen_:screen_combiner_screen_2_thin:screen_:textured_device_4:paint
+    100028: screen_2_thin:screen_:screen_combiner_screen_2_thin:screen_:textured_device_4:screen_emmision
+    100030: screen_2_thin:screen_:textured_device_4:metal_screen_screen_2_thin:screen_:screen_combiner
+    400000: //RootNode
+    400002: combiner_core_power_core
+    400004: combiner_main_body_luminance
+    400006: combiner_main_body_paint
+    400008: combiner_metal_main_body
+    400010: combiner_power_core_bateries_battery2_core2
+    400012: combiner_power_core_bateries_battery2_luminance
+    400014: combiner_power_core_bateries_battery2_metal
+    400016: combiner_power_core_bateries_paint_battery2
+    400018: combiner_power_core_battery1_bateries_core2
+    400020: combiner_power_core_battery1_bateries_luminance
+    400022: combiner_power_core_battery1_bateries_metal
+    400024: combiner_power_core_paint_battery1_bateries
+    400026: screen_2_thin:screen_:screen_combiner_screen_2_thin:screen_:textured_device_4:paint
+    400028: screen_2_thin:screen_:screen_combiner_screen_2_thin:screen_:textured_device_4:screen_emmision
+    400030: screen_2_thin:screen_:textured_device_4:metal_screen_screen_2_thin:screen_:screen_combiner
+    2100000: combiner_core_power_coreMat
+    2100002: combiner_main_body_luminanceMat
+    2100004: combiner_main_body_paintMat
+    2100006: combiner_metal_main_bodyMat
+    2100008: combiner_power_core_bateries_battery2_core2Mat
+    2100010: combiner_power_core_bateries_battery2_luminanceMat
+    2100012: combiner_power_core_bateries_battery2_metalMat
+    2100014: combiner_power_core_bateries_paint_battery2Mat
+    2100016: combiner_power_core_battery1_bateries_core2Mat
+    2100018: combiner_power_core_battery1_bateries_luminanceMat
+    2100020: combiner_power_core_battery1_bateries_metalMat
+    2100022: combiner_power_core_paint_battery1_bateriesMat
+    2100024: screen_2_thin_screen__screen_combiner_screen_2_thin_screen__textured_device_4_paintMat
+    2100026: screen_2_thin_screen__screen_combiner_screen_2_thin_screen__textured_device_4_screen_emmisionMat
+    2100028: screen_2_thin_screen__textured_device_4_metal_screen_screen_2_thin_screen__screen_combinerMat
+    2300000: combiner_core_power_core
+    2300002: combiner_main_body_luminance
+    2300004: combiner_main_body_paint
+    2300006: combiner_metal_main_body
+    2300008: combiner_power_core_bateries_battery2_core2
+    2300010: combiner_power_core_bateries_battery2_luminance
+    2300012: combiner_power_core_bateries_battery2_metal
+    2300014: combiner_power_core_bateries_paint_battery2
+    2300016: combiner_power_core_battery1_bateries_core2
+    2300018: combiner_power_core_battery1_bateries_luminance
+    2300020: combiner_power_core_battery1_bateries_metal
+    2300022: combiner_power_core_paint_battery1_bateries
+    2300024: screen_2_thin:screen_:screen_combiner_screen_2_thin:screen_:textured_device_4:paint
+    2300026: screen_2_thin:screen_:screen_combiner_screen_2_thin:screen_:textured_device_4:screen_emmision
+    2300028: screen_2_thin:screen_:textured_device_4:metal_screen_screen_2_thin:screen_:screen_combiner
+    3300000: combiner_core_power_core
+    3300002: combiner_main_body_luminance
+    3300004: combiner_main_body_paint
+    3300006: combiner_metal_main_body
+    3300008: combiner_power_core_bateries_battery2_core2
+    3300010: combiner_power_core_bateries_battery2_luminance
+    3300012: combiner_power_core_bateries_battery2_metal
+    3300014: combiner_power_core_bateries_paint_battery2
+    3300016: combiner_power_core_battery1_bateries_core2
+    3300018: combiner_power_core_battery1_bateries_luminance
+    3300020: combiner_power_core_battery1_bateries_metal
+    3300022: combiner_power_core_paint_battery1_bateries
+    3300024: screen_2_thin:screen_:screen_combiner_screen_2_thin:screen_:textured_device_4:paint
+    3300026: screen_2_thin:screen_:screen_combiner_screen_2_thin:screen_:textured_device_4:screen_emmision
+    3300028: screen_2_thin:screen_:textured_device_4:metal_screen_screen_2_thin:screen_:screen_combiner
+    4300000: combiner_core_power_core
+    4300002: combiner_main_body_luminance
+    4300004: combiner_main_body_paint
+    4300006: combiner_metal_main_body
+    4300008: combiner_power_core_bateries_battery2_core2
+    4300010: combiner_power_core_bateries_battery2_luminance
+    4300012: combiner_power_core_bateries_battery2_metal
+    4300014: combiner_power_core_bateries_paint_battery2
+    4300016: combiner_power_core_battery1_bateries_core2
+    4300018: combiner_power_core_battery1_bateries_luminance
+    4300020: combiner_power_core_battery1_bateries_metal
+    4300022: combiner_power_core_paint_battery1_bateries
+    4300024: screen_2_thin:screen_:screen_combiner_screen_2_thin:screen_:textured_device_4:paint
+    4300026: screen_2_thin:screen_:screen_combiner_screen_2_thin:screen_:textured_device_4:screen_emmision
+    4300028: screen_2_thin:screen_:textured_device_4:metal_screen_screen_2_thin:screen_:screen_combiner
+    2186277476908879412: ImportLogs
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

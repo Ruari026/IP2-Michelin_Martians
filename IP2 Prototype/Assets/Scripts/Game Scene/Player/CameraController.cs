@@ -75,7 +75,6 @@ public class CameraController : MonoBehaviour
                 if (hit.transform.gameObject.tag == "Selectable Object")
                 {
                     //Checking if the cursor is hovering over an interactable object
-                    Debug.Log("Highlighting " + hit.transform.name);
                     hit.transform.gameObject.GetComponent<ObjectController>().SetHighlightVisibility(true);
 
                     //Input for selecting appliances

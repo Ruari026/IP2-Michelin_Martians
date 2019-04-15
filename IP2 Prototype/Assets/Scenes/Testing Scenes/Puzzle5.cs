@@ -19,6 +19,8 @@ public class Puzzle5 : MonoBehaviour
     [Header("The text objects the players 'Input' appears")]
     public Text input1, input2;
 
+    public GameObject[] puzzlePanels;
+
     bool waiting;
     bool startPattern;
     int part1RandomPattern;
@@ -33,6 +35,8 @@ public class Puzzle5 : MonoBehaviour
         //randomizes the pattern to use
         part1RandomPattern = Random.Range(0, 9);
         part2RandomPattern = Random.Range(0, 11);
+
+        puzzlePanels[1].SetActive(false);
     }
 
     //sets the LED's  flashing pattern
@@ -177,10 +181,10 @@ public class Puzzle5 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (startPattern == true)
-        PlayPattern();
-        else
-        SetStartPattern();
+            if (startPattern == true)
+                PlayPattern();
+            else
+                SetStartPattern();
 
         if (LED[1].GetComponent<Image>().color != Color.white && LED[3].GetComponent<Image>().color != Color.white)
         {
@@ -199,13 +203,19 @@ public class Puzzle5 : MonoBehaviour
     {
         if (!waiting)
         {
-            LED[0].GetComponent<Image>().color = pattern1[i];
-            LED[2].GetComponent<Image>().color = pattern2[i];
-            StartCoroutine(Wait());
-            i++;
-            if (i >= 4)
+            if (i > 3 )
             {
+                LED[0].GetComponent<Image>().color = Color.black;
+                LED[2].GetComponent<Image>().color = Color.black;
+                StartCoroutine(Wait());
                 i = 0;
+            }
+            else
+            {
+                StartCoroutine(Wait());
+                LED[0].GetComponent<Image>().color = pattern1[i];
+                LED[2].GetComponent<Image>().color = pattern2[i];
+                i++;
             }
         }
     }
@@ -213,10 +223,18 @@ public class Puzzle5 : MonoBehaviour
     IEnumerator Wait()
     {
         waiting = true;
-        yield return new WaitForSeconds(1);
+
+        if(i > 3)
+        {
+            yield return new WaitForSeconds(2);
+        }
+        else
+        {
+            yield return new WaitForSeconds(1);
         LED[0].GetComponent<Image>().color = Color.white;
         LED[2].GetComponent<Image>().color = Color.white;
-        yield return new WaitForSeconds(0.3f);
+            yield return new WaitForSeconds(0.04f);
+        }
         waiting = false;
     }
 
@@ -230,6 +248,8 @@ public class Puzzle5 : MonoBehaviour
         {
             LED[1].GetComponent<Image>().color = Color.red;
         }
+        puzzlePanels[0].SetActive(false);
+        puzzlePanels[1].SetActive(true);
     }
 
     public void ClearPart1()
