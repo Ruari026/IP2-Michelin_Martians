@@ -102,7 +102,6 @@ public class BusterPuzzleScript : PuzzleClass
     */
     public void UpChange(int buttonNumber)
     {
-
         if (panels[buttonNumber].GetComponent<Image>().color == colourSet[0])
         {
             panels[buttonNumber].GetComponent<Image>().color = colourSet[1];
@@ -127,7 +126,6 @@ public class BusterPuzzleScript : PuzzleClass
 
     public void DownChange(int buttonNumber)
     {
-
         if (panels[buttonNumber].GetComponent<Image>().color == colourSet[0])
         {
             panels[buttonNumber].GetComponent<Image>().color = colourSet[3];
@@ -147,6 +145,10 @@ public class BusterPuzzleScript : PuzzleClass
         {
             panels[buttonNumber].GetComponent<Image>().color = colourSet[0];
             colourTexts[buttonNumber].text = "R";
+        }
+        else
+        {
+            Debug.Log("Error");
         }
     }
 }

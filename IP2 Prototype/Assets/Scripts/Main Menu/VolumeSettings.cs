@@ -6,6 +6,10 @@ using UnityEngine.Audio;
 
 public class VolumeSettings : MonoBehaviour
 {
+    public GameObject defaultScreen;
+    public GameObject volumeScreen;
+    public GameObject displayScreen;
+
     public AudioMixer audioMixer;
     public Slider volumeSlider;
     public Slider musicSlider;
@@ -39,5 +43,26 @@ public class VolumeSettings : MonoBehaviour
 
         audioMixer.GetFloat("musicVolume", out soundValue);
         musicSlider.value = soundValue;
+    }
+
+    //Changing the Settings Screens
+    public void SetSettingsScreen(string screen)
+    {
+        defaultScreen.SetActive(false);
+        volumeScreen.SetActive(false);
+        displayScreen.SetActive(false);
+
+        if (screen == "Default")
+        {
+            defaultScreen.SetActive(true);
+        }
+        else if (screen == "Volume")
+        {
+            volumeScreen.SetActive(true);
+        }
+        else if (screen == "Display")
+        {
+            displayScreen.SetActive(true);
+        }
     }
 }

@@ -13,7 +13,7 @@ public class SubmissionPipeController : ObjectController
     // Update is called once per frame
     void Update()
     {
-        
+        SetHighlightVisibility(false);
     }
 
     public void ActivateObject()

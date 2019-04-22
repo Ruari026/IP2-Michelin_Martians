@@ -8,6 +8,7 @@ public enum ApplianceTypes
     SCRAMBLER,
     GRINDER,
     BLAZER,
+    BUSTER,
 
     //Other Interactable Items
     STORAGE,
@@ -20,7 +21,7 @@ public class ObjectController : MonoBehaviour
     
     public InventorySlotController foodSlot;
 
-    private Animator theAnimController;
+    public Animator theAnimController;
     public Transform selectionCameraPosition;
 
     public GameObject applianceDefaultUi;
@@ -28,6 +29,7 @@ public class ObjectController : MonoBehaviour
     public PuzzleClass appliancePuzzle;
 
     public GameObject objectHighlight;
+    public Material highlightMaterial;
     public float objectHighlightWidth = 0.005f;
 
 
@@ -49,10 +51,9 @@ public class ObjectController : MonoBehaviour
     */
     public Transform SelectedObject()
     {
-        theAnimController = this.GetComponent<Animator>();
         if (theAnimController != null)
         {
-            this.GetComponent<Animator>().SetBool("Opened", true);
+            theAnimController.SetBool("Opened", true);
         }
 
         return selectionCameraPosition;
@@ -68,7 +69,7 @@ public class ObjectController : MonoBehaviour
     {
         if (theAnimController != null)
         {
-            this.GetComponent<Animator>().SetBool("Opened", false);
+            theAnimController.SetBool("Opened", false);
         }
     }
 

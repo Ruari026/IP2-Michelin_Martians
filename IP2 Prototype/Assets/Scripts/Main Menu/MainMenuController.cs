@@ -5,11 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuController : MonoBehaviour
 {
+    public GameObject dataManager;
+
     // Start is called before the first frame update
     void Start()
     {
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
+
+        GameObject g = GameObject.Find("GameDataManager(Clone)");
+        if (g == null)
+        {
+            GameObject.Instantiate(dataManager);
+        }
     }
     private void Update()
     {
@@ -23,20 +31,6 @@ public class MainMenuController : MonoBehaviour
         }
     }
 
-    //once called this loads the main game after the sound is played
-    IEnumerator DelayLoadMainGame()
-    {
-        GetComponent<AudioSource>().Play();
-        yield return new WaitForSeconds(GetComponent<AudioSource>().clip.length);
-        SceneManager.LoadScene("Game Scene");
-    }
-    //once called this quits the game after the sound is played
-    IEnumerator DelayLoadQuit()
-    {
-        GetComponent<AudioSource>().Play();
-        yield return new WaitForSeconds(GetComponent<AudioSource>().clip.length);
-        Application.Quit();
-    }
     //once called this loads the main menu after the sound is played
     IEnumerator DelayLoadMainMenu()
     {
@@ -62,6 +56,18 @@ public class MainMenuController : MonoBehaviour
     {
         StartCoroutine(DelayLoadMainGame());
     }
+    //once called this loads the main game after the sound is played
+    IEnumerator DelayLoadMainGame()
+    {
+        GetComponent<AudioSource>().Play();
+        yield return new WaitForSeconds(GetComponent<AudioSource>().clip.length);
+        SceneManager.LoadScene("Game Scene");
+    }
+
+    public void ToLevelSelect()
+    {
+
+    }
 
     public void ToMainMenu()
     {
@@ -76,6 +82,13 @@ public class MainMenuController : MonoBehaviour
     public void QuitGame()
     {
         StartCoroutine(DelayLoadQuit());
+    }
+    //once called this quits the game after the sound is played
+    IEnumerator DelayLoadQuit()
+    {
+        GetComponent<AudioSource>().Play();
+        yield return new WaitForSeconds(GetComponent<AudioSource>().clip.length);
+        Application.Quit();
     }
 
 }

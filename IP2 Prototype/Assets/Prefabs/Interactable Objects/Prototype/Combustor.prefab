@@ -275,6 +275,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   applianceType: 2
   foodSlot: {fileID: 8895095212279840674}
+  theAnimController: {fileID: 0}
   selectionCameraPosition: {fileID: 756873047143261658}
   applianceDefaultUi: {fileID: 529323317479833691}
   appliancePuzzleUi: {fileID: 6750349652674973517}
@@ -2137,7 +2138,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: db1094adefaed764187e1aa2c43bfbec, type: 3}
+  - {fileID: 2100000, guid: f92671c9cb2e1154cb27cd98b9b0e453, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

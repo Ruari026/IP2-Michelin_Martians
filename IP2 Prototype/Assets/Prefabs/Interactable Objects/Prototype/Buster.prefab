@@ -274,7 +274,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 6448979169059370159}
         m_MethodName: DownChange
         m_Mode: 3
         m_Arguments:
@@ -427,7 +427,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 0.392}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1536,7 +1536,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1776222366198360541
 Transform:
   m_ObjectHideFlags: 0
@@ -1704,7 +1704,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.06795311, b: 1, a: 0.392}
+  m_Color: {r: 0, g: 0.06795311, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1836,7 +1836,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 6448979169059370159}
         m_MethodName: DownChange
         m_Mode: 3
         m_Arguments:
@@ -1906,7 +1906,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: db1094adefaed764187e1aa2c43bfbec, type: 3}
+  - {fileID: 2100000, guid: f92671c9cb2e1154cb27cd98b9b0e453, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2042,7 +2042,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 6448979169059370159}
         m_MethodName: DownChange
         m_Mode: 3
         m_Arguments:
@@ -2329,7 +2329,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 6448979169059370159}
         m_MethodName: UpChange
         m_Mode: 3
         m_Arguments:
@@ -2695,7 +2695,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 6448979169059370159}
         m_MethodName: UpChange
         m_Mode: 3
         m_Arguments:
@@ -2769,7 +2769,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 0, a: 0.392}
+  m_Color: {r: 0, g: 1, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3023,8 +3023,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dd0733e77a039a47913037af4c6f4eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  applianceType: 1
+  applianceType: 3
   foodSlot: {fileID: 2487487470089873362}
+  theAnimController: {fileID: 0}
   selectionCameraPosition: {fileID: 6537348431839190578}
   applianceDefaultUi: {fileID: 6898178285532519240}
   appliancePuzzleUi: {fileID: 5654085479300804985}
@@ -3949,7 +3950,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 6448979169059370159}
         m_MethodName: UpChange
         m_Mode: 3
         m_Arguments:
@@ -4078,7 +4079,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 6448979169059370159}
         m_MethodName: DownChange
         m_Mode: 3
         m_Arguments:
@@ -4281,7 +4282,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.99777603, b: 0, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -4583,7 +4584,11 @@ MonoBehaviour:
   - {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   - {r: 1, g: 0, b: 0, a: 1}
   score: 0
-  colourTexts: []
+  colourTexts:
+  - {fileID: 2878240842064410527}
+  - {fileID: 2506900998274773853}
+  - {fileID: 6176535918971781371}
+  - {fileID: 4700321848177597759}
   endText: {fileID: 2491075651974987090}
   currentSol: []
 --- !u!1 &9059333320613208072
@@ -4702,7 +4707,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 6448979169059370159}
         m_MethodName: UpChange
         m_Mode: 3
         m_Arguments:
