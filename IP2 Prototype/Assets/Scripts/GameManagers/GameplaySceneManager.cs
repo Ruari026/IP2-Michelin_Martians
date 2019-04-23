@@ -12,12 +12,27 @@ public class GameplaySceneManager : MonoBehaviour
     [Header("Scene Starting Information")]
     public GameObject[] aliens;
 
+    [Header("Level 1 Solutions")]
     public FoodObject[] eggSolutions;
     public GameObject eggTextUI;
     public FoodObject[] soupSolutions;
     public GameObject soupTextUI;
+    public FoodObject[] fishFilletsSolutions;
+    public GameObject fishFilletsTextUI;
+
+    [Header("Level 2 Solutions")]
     public FoodObject[] steakSolutions;
     public GameObject steakTextUI;
+    public FoodObject[] sushiSolutions;
+    public GameObject sushiTextUI;
+    public FoodObject[] pieSolutions;
+    public GameObject pieTextUI;
+
+    [Header("Level 3 Solutions")]
+    public FoodObject[] surfAndTurfSolutions;
+    public GameObject surfAndTurfTextUI;
+    public FoodObject[] caviarSolutions;
+    public GameObject caviarTextUI;
 
     public FoodObject sceneSolution;
     public InventorySlotController[] sceneStorageLocations;
@@ -26,8 +41,9 @@ public class GameplaySceneManager : MonoBehaviour
     [Header("Scene Solution Checking")]
     public InventorySlotController solutionPipeInventory;
     public GameObject sceneSolutionInfographic;
-    public GameObject solutionCorrectGraphic;
-    public GameObject solutionWrongGraphic;
+    private int alien;
+    public GameObject[] solutionCorrectGraphic;
+    public GameObject[] solutionWrongGraphic;
 
     [Header("Scene Timer")]
     private bool runTimer = false;
@@ -46,7 +62,7 @@ public class GameplaySceneManager : MonoBehaviour
     void Start()
     {
         SetSceneSolution();
-        RandomizeFoodLoctions();
+        RandomizeFoodLocations();
 
         currentTimerValue = maxTimerValue;
 
@@ -56,24 +72,57 @@ public class GameplaySceneManager : MonoBehaviour
     public void SetSceneSolution()
     {
         //Choosing the alien to serve
-        int i = Random.Range(0, aliens.Length);
-        aliens[i].SetActive(true);
+        alien = Random.Range(0, aliens.Length);
+        aliens[alien].SetActive(true);
 
         //Choosing the recipe to make
         string s = GameDataManager.GetRecipeName();
+        //Level 1
         if (s == "Eggs")
         {
-            sceneSolution = eggSolutions[i];
+            sceneSolution = eggSolutions[alien];
             eggTextUI.SetActive(true);
         }
         else if (s == "Soup")
         {
-            sceneSolution = soupSolutions[i];
+            sceneSolution = soupSolutions[alien];
             soupTextUI.SetActive(true);
+        }
+        else if (s == "Fish Fillets")
+        {
+            sceneSolution = fishFilletsSolutions[alien];
+            fishFilletsTextUI.SetActive(true);
+        }
+        //Level 2
+        else if (s == "Steak")
+        {
+            sceneSolution = steakSolutions[alien];
+            steakTextUI.SetActive(true);
+        }
+        else if (s == "Sushi")
+        {
+            sceneSolution = sushiSolutions[alien];
+            sushiTextUI.SetActive(true);
+        }
+        else if (s == "Pie")
+        {
+            sceneSolution = pieSolutions[alien];
+            pieTextUI.SetActive(true);
+        }
+        //Level 3
+        else if (s == "Surf & Turf")
+        {
+            sceneSolution = surfAndTurfSolutions[alien];
+            surfAndTurfTextUI.SetActive(true);
+        }
+        else if (s == "Caviar")
+        {
+            sceneSolution = caviarSolutions[alien];
+            caviarTextUI.SetActive(true);
         }
     }
     
-    public void RandomizeFoodLoctions()
+    public void RandomizeFoodLocations()
     {
         for (int i = 0; i < startingFoodObjects.Length; i++)
         {
@@ -155,13 +204,13 @@ public class GameplaySceneManager : MonoBehaviour
     IEnumerator ShowPlayerSuccess(float winTime)
     {
         solutionPipeInventory.SetSlotInteractionState(false);
-        solutionCorrectGraphic.SetActive(true);
+        solutionCorrectGraphic[alien].SetActive(true);
         sceneSolutionInfographic.SetActive(false);
 
         yield return new WaitForSeconds(2.5f);
 
         solutionPipeInventory.SetSlotInteractionState(false);
-        solutionCorrectGraphic.SetActive(false);
+        solutionCorrectGraphic[alien].SetActive(false);
 
         endScreen.SetActive(true);
         float minutes = Mathf.FloorToInt(winTime / 60);
@@ -176,13 +225,13 @@ public class GameplaySceneManager : MonoBehaviour
     IEnumerator ShowPlayerFail()
     {
         solutionPipeInventory.SetSlotInteractionState(false);
-        solutionWrongGraphic.SetActive(true);
+        solutionWrongGraphic[alien].SetActive(true);
         sceneSolutionInfographic.SetActive(false);
 
         yield return new WaitForSeconds(2.5f);
 
         solutionPipeInventory.SetSlotInteractionState(true);
-        solutionWrongGraphic.SetActive(false);
+        solutionWrongGraphic[alien].SetActive(false);
         sceneSolutionInfographic.SetActive(true);
     }
 

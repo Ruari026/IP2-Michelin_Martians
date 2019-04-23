@@ -52,8 +52,9 @@ public class MainMenuController : MonoBehaviour
     Scene Changing
     ====================================================================================================
     */
-    public void ToMainGame()
+    public void ToMainGame(int levelNumber)
     {
+        GameDataManager.SetRecipeName(levelNumber);
         StartCoroutine(DelayLoadMainGame());
     }
     //once called this loads the main game after the sound is played

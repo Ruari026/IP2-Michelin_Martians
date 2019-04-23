@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b1f5735ad9268840bd3195370b6c8ba, type: 3}
+  m_Name: Bartlack Steak
+  m_EditorClassIdentifier: 
+  foodIcon: {fileID: 21300000, guid: fe4322ad28def7f43b32f9c77bd8bc5d, type: 3}
+  foodSetting: 2
+  foodToughness: 2
+  applianceSolutions: 
+  applianceTransformations: []
+  foodCombinations:
+  - {fileID: 11400000, guid: e607f466bf8cdf44b9108f0853866067, type: 2}
+  combinationTransformations:
+  - {fileID: 11400000, guid: 9ee81302953866a4faa6c02fe07ddbe2, type: 2}
+  failedTransformation: {fileID: 11400000, guid: 91bccb8c8f43599499987626cc1bf67d,
+    type: 2}

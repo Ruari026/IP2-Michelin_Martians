@@ -17,4 +17,9 @@ MonoBehaviour:
   foodToughness: 4
   applianceSolutions: 
   applianceTransformations: []
+  foodCombinations:
+  - {fileID: 11400000, guid: ba2a480c5fc180c48b1ad90c168ab400, type: 2}
+  - {fileID: 11400000, guid: 8c2205a45d0eade42993751ad1e1650e, type: 2}
+  - {fileID: 11400000, guid: 6c41ca0c6f9718e47bbf62c0dbb59217, type: 2}
+  combinationTransformations: []
   failedTransformation: {fileID: 11400000}

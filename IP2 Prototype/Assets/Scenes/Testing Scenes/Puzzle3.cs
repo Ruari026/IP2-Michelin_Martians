@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class Puzzle3 : MonoBehaviour
+public class Puzzle3 : PuzzleClass
 { 
     int rotateAmount = 0;
     int i = 0;

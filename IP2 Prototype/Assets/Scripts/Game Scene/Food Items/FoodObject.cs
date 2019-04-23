@@ -17,6 +17,10 @@ public class FoodObject : ScriptableObject
     public ApplianceTypes[] applianceSolutions = new ApplianceTypes[1];
     public FoodObject[] applianceTransformations = new FoodObject[1];
 
+    [Header("FoodTypes To Combine With")]
+    public FoodObject[] foodCombinations = new FoodObject[1];
+    public FoodObject[] combinationTransformations = new FoodObject[1];
+
     [Header("Default Transformation If Player Fails Puzzle")]
     public FoodObject failedTransformation;
 }

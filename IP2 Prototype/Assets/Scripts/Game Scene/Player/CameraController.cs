@@ -22,7 +22,7 @@ public class CameraController : MonoBehaviour
     private Transform targetPosition;
 
     //Other Control Variables
-    private bool canInput = false;
+    public bool canInput = false;
 
     void Start()
     {
@@ -30,7 +30,7 @@ public class CameraController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
         if (!isInTransition)
         {

@@ -31,48 +31,53 @@ public class BlazerPuzzleScript : PuzzleClass, IPointerDownHandler, IPointerUpHa
     //solutions
     [Header("If low temp required.")]
     [Header("True - Held, False - Press")]
-    public List<FoodObject> solution1Ingredients;
     public bool[] solution1;
     [Header("If medium temp required.")]
-    public List<FoodObject> solution2Ingredients;
     public bool[] solution2;
     [Header("If high temp required.")]
-    public List<FoodObject> solution3Ingredients;
     public bool[] solution3;
     public bool[] currentSolution;
     private bool[] playerSolution;
 
     public override void GetRelativeSolution(FoodObject transformingFood)
     {
-        if (solution1Ingredients.Contains(transformingFood))
+        switch (transformingFood.foodSetting)
         {
-            temperature = 1;
-            Debug.Log("Using Solution 1");
-            currentSolution = solution1;
-            activated = true;
-            minTime = 15;
-            maxTime = 30;
-            overallTimerSlider.maxValue = 70;
-        }
-        else if (solution2Ingredients.Contains(transformingFood))
-        {
-            temperature = 2;
-            Debug.Log("Using Solution 2");
-            currentSolution = solution2;
-            activated = true;
-            minTime = 30;
-            maxTime = 50;
-            overallTimerSlider.maxValue = 70;
-        }
-        else if (solution3Ingredients.Contains(transformingFood))
-        {
-            temperature = 3;
-            Debug.Log("Using Solution 3");
-            currentSolution = solution3;
-            activated = true;
-            minTime = 50;
-            maxTime = 70;
-            overallTimerSlider.maxValue = 70;
+            case (CookingSetting.LOW):
+                {
+                    temperature = 1;
+                    Debug.Log("Using Solution 1");
+                    currentSolution = solution1;
+                    activated = true;
+                    minTime = 15;
+                    maxTime = 30;
+                    overallTimerSlider.maxValue = 70;
+                }
+                break;
+
+            case (CookingSetting.MED):
+                {
+                    temperature = 2;
+                    Debug.Log("Using Solution 2");
+                    currentSolution = solution2;
+                    activated = true;
+                    minTime = 30;
+                    maxTime = 50;
+                    overallTimerSlider.maxValue = 70;
+                }
+                break;
+
+            case (CookingSetting.HIGH):
+                {
+                    temperature = 3;
+                    Debug.Log("Using Solution 3");
+                    currentSolution = solution3;
+                    activated = true;
+                    minTime = 50;
+                    maxTime = 70;
+                    overallTimerSlider.maxValue = 70;
+                }
+                break;
         }
     }
 

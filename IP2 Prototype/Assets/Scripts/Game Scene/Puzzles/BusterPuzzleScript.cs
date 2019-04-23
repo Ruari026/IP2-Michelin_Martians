@@ -8,16 +8,12 @@ public class BusterPuzzleScript : PuzzleClass
     public GameObject[] panels;
     public Color[] colourSet = { Color.red, Color.blue, Color.green, Color.yellow };
     [Header("If Parameter 1")]
-    public List<FoodObject> solution1Ingredients;
     public Color[] sol1 = { Color.red, Color.red, Color.blue };
     [Header("If Parameter 2")]
-    public List<FoodObject> solution2Ingredients;
     public Color[] sol2 = { Color.green, Color.blue, Color.yellow, Color.green };
     [Header("If Parameter 3")]
-    public List<FoodObject> solution3Ingredients;
     public Color[] sol3 = { Color.blue, Color.red, Color.blue, Color.yellow };
     [Header("If Parameter 4")]
-    public List<FoodObject> solution4Ingredients;
     public Color[] sol4 = { Color.blue, Color.green, Color.yellow, Color.red };
     public int score = 0;
 
@@ -34,25 +30,31 @@ public class BusterPuzzleScript : PuzzleClass
     */
     public override void GetRelativeSolution(FoodObject transformingFood)
     {
-        if (solution1Ingredients.Contains(transformingFood))
+        switch (transformingFood.foodToughness)
         {
-            Debug.Log("Using Solution 1");
-            currentSol = sol1;
-        }
-        else if (solution2Ingredients.Contains(transformingFood))
-        {
-            Debug.Log("Using Solution 2");
-            currentSol = sol2;
-        }
-        else if (solution3Ingredients.Contains(transformingFood))
-        {
-            Debug.Log("Using Solution 3");
-            currentSol = sol3;
-        }
-        else if (solution4Ingredients.Contains(transformingFood))
-        {
-            Debug.Log("Using Solution 4");
-            currentSol = sol4;
+            case (FoodToughness.SOFT):
+                {
+                    currentSol = sol1;
+                }
+                break;
+
+            case (FoodToughness.WEAK):
+                {
+                    currentSol = sol2;
+                }
+                break;
+
+            case (FoodToughness.TOUGH):
+                {
+                    currentSol = sol3;
+                }
+                break;
+
+            case (FoodToughness.HARD):
+                {
+                    currentSol = sol4;
+                }
+                break;
         }
     }
 

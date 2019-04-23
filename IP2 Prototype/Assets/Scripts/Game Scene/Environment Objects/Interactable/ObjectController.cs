@@ -9,6 +9,7 @@ public enum ApplianceTypes
     GRINDER,
     BLAZER,
     BUSTER,
+    COMBINER,
 
     //Other Interactable Items
     STORAGE,
@@ -19,7 +20,7 @@ public class ObjectController : MonoBehaviour
 {
     public ApplianceTypes applianceType;
     
-    public InventorySlotController foodSlot;
+    public InventorySlotController[] foodSlots = new InventorySlotController[1];
 
     public Animator theAnimController;
     public Transform selectionCameraPosition;
@@ -81,51 +82,95 @@ public class ObjectController : MonoBehaviour
     */
     public void ActivatePuzzle()
     {
-        FoodObject foodToCheck = foodSlot.GetSlotContents();
+        bool canActivate = true;
+        for (int i = 0; i < foodSlots.Length; i++)
+        {
+            if (foodSlots[i].GetSlotContents() == null)
+            {
+                canActivate = false;
+            }
+        }
 
-        if (foodToCheck != null)
+
+        if (canActivate)
         {
             applianceDefaultUi.SetActive(false);
             appliancePuzzleUi.SetActive(true);
-            foodSlot.SetSlotInteractionState(false);
+            foodSlots[0].SetSlotInteractionState(false);
 
-            appliancePuzzle.GetRelativeSolution(foodSlot.slotObject);
+            appliancePuzzle.GetRelativeSolution(foodSlots[0].slotObject);
         }
     }
 
     public void CheckPuzzle()
     {
-        FoodObject foodToCheck = foodSlot.GetSlotContents();
-
-        bool success = false;
-        int transformation = 0;
-
-        for (int i = 0; i < foodToCheck.applianceSolutions.Length; i++)
+        if (applianceType == ApplianceTypes.COMBINER)
         {
-            if (foodToCheck.applianceSolutions[i] == applianceType)
+            bool success = false;
+
+            FoodObject food1 = foodSlots[0].GetSlotContents();
+            FoodObject food2 = foodSlots[1].GetSlotContents();
+            FoodObject newFood = new FoodObject();
+
+            for (int i = 0; i < food1.foodCombinations.Length; i++)
             {
-                success = true;
-                transformation = i;
+                for (int j = 0; j < food2.foodCombinations.Length; j++)
+                {
+                    if (food1 == food2.foodCombinations[j] && food2 == food1.foodCombinations[i])
+                    {
+                        success = true;
+                        newFood = food1.combinationTransformations[i];
+                    }
+                }
             }
-        }
 
-        if (success && appliancePuzzle.CheckSolution())
-        {
-            EventSuccess(foodToCheck.applianceTransformations[transformation]);
+            if (success && appliancePuzzle.CheckSolution())
+            {
+                TransformFoodItemSuccess(newFood);
+            }
+            else
+            {
+                TransformFoodItemFail(food1.failedTransformation);
+            }
+
+            applianceDefaultUi.SetActive(true);
+            appliancePuzzleUi.SetActive(false);
+            foodSlots[0].SetSlotInteractionState(true);
         }
         else
         {
-            EventFail(foodToCheck.failedTransformation);
-        }
+            FoodObject foodToCheck = foodSlots[0].GetSlotContents();
 
-        applianceDefaultUi.SetActive(true);
-        appliancePuzzleUi.SetActive(false);
-        foodSlot.SetSlotInteractionState(true);
+            bool success = false;
+            int transformation = 0;
+
+            for (int i = 0; i < foodToCheck.applianceSolutions.Length; i++)
+            {
+                if (foodToCheck.applianceSolutions[i] == applianceType)
+                {
+                    success = true;
+                    transformation = i;
+                }
+            }
+
+            if (success && appliancePuzzle.CheckSolution())
+            {
+                TransformFoodItemSuccess(foodToCheck.applianceTransformations[transformation]);
+            }
+            else
+            {
+                TransformFoodItemFail(foodToCheck.failedTransformation);
+            }
+
+            applianceDefaultUi.SetActive(true);
+            appliancePuzzleUi.SetActive(false);
+            foodSlots[0].SetSlotInteractionState(true);
+        }
     }
 
     public void CheckPuzzle(bool manualSuccess)
     {
-        FoodObject foodToCheck = foodSlot.GetSlotContents();
+        FoodObject foodToCheck = foodSlots[0].GetSlotContents();
         bool success = false;
         int transformation = 0;
 
@@ -140,26 +185,36 @@ public class ObjectController : MonoBehaviour
 
         if (manualSuccess && success)
         {
-            EventSuccess(foodToCheck.applianceTransformations[transformation]);
+            TransformFoodItemSuccess(foodToCheck.applianceTransformations[transformation]);
         }
         else
         {
-            EventFail(foodToCheck.failedTransformation);
+            TransformFoodItemFail(foodToCheck.failedTransformation);
         }
 
         applianceDefaultUi.SetActive(true);
         appliancePuzzleUi.SetActive(false);
-        foodSlot.SetSlotInteractionState(true);
+        foodSlots[0].SetSlotInteractionState(true);
     }
 
-    public void EventSuccess(FoodObject nextFoodObject)
+    public void TransformFoodItemSuccess(FoodObject nextFoodObject)
     {
-        foodSlot.AddSlotContents(nextFoodObject);
+        for (int i = 0; i < foodSlots.Length; i++)
+        {
+            foodSlots[i].slotObject = null;
+        }
+
+        foodSlots[0].AddSlotContents(nextFoodObject);
     }
 
-    public void EventFail(FoodObject garbageFoodObject)
+    public void TransformFoodItemFail(FoodObject garbageFoodObject)
     {
-        foodSlot.AddSlotContents(garbageFoodObject);
+        for (int i = 0; i < foodSlots.Length; i++)
+        {
+            foodSlots[i].slotObject = null;
+        }
+
+        foodSlots[0].AddSlotContents(garbageFoodObject);
     }
 
 
