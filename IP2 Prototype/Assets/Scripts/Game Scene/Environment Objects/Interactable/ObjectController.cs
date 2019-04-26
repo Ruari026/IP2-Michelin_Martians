@@ -120,6 +120,7 @@ public class ObjectController : MonoBehaviour
                     {
                         success = true;
                         newFood = food1.combinationTransformations[i];
+                        Debug.Log(newFood.name);
                     }
                 }
             }

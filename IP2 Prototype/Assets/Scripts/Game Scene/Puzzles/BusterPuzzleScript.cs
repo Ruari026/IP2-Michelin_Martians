@@ -30,6 +30,7 @@ public class BusterPuzzleScript : PuzzleClass
     */
     public override void GetRelativeSolution(FoodObject transformingFood)
     {
+        Debug.Log(transformingFood.foodToughness);
         switch (transformingFood.foodToughness)
         {
             case (FoodToughness.SOFT):
@@ -92,8 +93,7 @@ public class BusterPuzzleScript : PuzzleClass
             panels[i].GetComponent<Image>().color = colourSet[0];
             colourTexts[i].text = "R";
         }
-
-        currentSol = sol2;
+        
     }
 
 

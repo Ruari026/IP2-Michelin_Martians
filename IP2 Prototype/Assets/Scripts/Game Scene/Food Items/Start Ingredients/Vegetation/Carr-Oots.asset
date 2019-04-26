@@ -15,7 +15,7 @@ MonoBehaviour:
   foodIcon: {fileID: 21300000, guid: 958d3fafc15db5b49af45b1eeff2c218, type: 3}
   foodSetting: 1
   foodToughness: 2
-  applianceSolutions: 01000000
+  applianceSolutions: 03000000
   applianceTransformations:
   - {fileID: 11400000, guid: 8aa10847f14d6cf41b6d021a465ff2e2, type: 2}
   foodCombinations:

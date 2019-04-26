@@ -164,12 +164,12 @@ public class BlazerPuzzleScript : PuzzleClass, IPointerDownHandler, IPointerUpHa
 
         if (!buttonPressed && startTimer) //if the timer has been started and the button is no longer held down - check how long held for
         {
-            if (timer >= 0.5f)
+            if (timer >= 0.3f)
             {
                 hold = true;
                 CheckSolution();
             }
-            else if (timer < 0.5f)
+            else if (timer < 0.3f)
             {
                 hold = false;
                 CheckSolution();

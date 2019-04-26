@@ -233,6 +233,8 @@ public class GameplaySceneManager : MonoBehaviour
         solutionPipeInventory.SetSlotInteractionState(true);
         solutionWrongGraphic[alien].SetActive(false);
         sceneSolutionInfographic.SetActive(true);
+
+        currentTimerValue -= 240;
     }
 
 

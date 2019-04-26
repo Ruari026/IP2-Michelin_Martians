@@ -224,7 +224,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4698585472523549288
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2096,7 +2096,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2080967295211806689
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2722,7 +2722,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1768789007154454472
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3684,7 +3684,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3757049317325189244
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5305,6 +5305,8 @@ MonoBehaviour:
   puzzlePanels:
   - {fileID: 2016281971685035111}
   - {fileID: 475788149584019371}
+  waiting: 0
+  startPattern: 0
 --- !u!1 &5904886999107185272
 GameObject:
   m_ObjectHideFlags: 0

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.29449484, g: 0.37262076, b: 0.58591825, a: 1}
+  m_IndirectSpecularColor: {r: 0.29449448, g: 0.3726203, b: 0.5859177, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -555,6 +555,7 @@ MonoBehaviour:
   minOrbitRange: {x: 10, y: 10}
   zoomType: 3
   zoomTime: 0.8
+  canInput: 0
 --- !u!1001 &92785556
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6713,7 +6714,7 @@ MonoBehaviour:
   - {fileID: 1001303759}
   - {fileID: 1042094218}
   sceneTimerText: {fileID: 2060228620}
-  maxTimerValue: 600
+  maxTimerValue: 450
   currentTimerValue: 0
   endScreen: {fileID: 1976574537}
   endText: {fileID: 1130983718}
@@ -7475,7 +7476,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 10:00
+  m_Text: 7:30
 --- !u!222 &1130983719
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11460,7 +11461,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 10:00
+  m_Text: 7:30
 --- !u!222 &2060228621
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11755,6 +11756,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ResetPuzzle
+      objectReference: {fileID: 0}
+    - target: {fileID: 3405569746211477417, guid: be34ccbe28d9e6440b6a376f52f190d4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3757049317325189247, guid: be34ccbe28d9e6440b6a376f52f190d4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be34ccbe28d9e6440b6a376f52f190d4, type: 3}
@@ -12605,6 +12616,11 @@ PrefabInstance:
     - target: {fileID: 756873048015505622, guid: fd140e71a16d18e48878a6529a719a8c,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5480680102234385105, guid: fd140e71a16d18e48878a6529a719a8c,
+        type: 3}
+      propertyPath: m_Interactable
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

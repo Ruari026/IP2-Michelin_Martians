@@ -20,8 +20,8 @@ public class CombinerPuzzleScript : PuzzleClass
 
     public GameObject[] puzzlePanels;
 
-    bool waiting;
-    bool startPattern;
+    public bool waiting;
+    public bool startPattern;
     int part1RandomPattern;
     int part2RandomPattern;
     int i = 0;
@@ -37,7 +37,7 @@ public class CombinerPuzzleScript : PuzzleClass
         if (part2RandomPattern == 0)
         {
             pattern2 = null;
-            pattern2 = new Color[] { Color.blue, Color.green, Color.green, Color.blue };
+            pattern2 = new Color[] { Color.blue, Color.green, Color.green, Color.red };
             part2Answer = "ALLB";
         }
         else if (part2RandomPattern == 1)
@@ -212,6 +212,9 @@ public class CombinerPuzzleScript : PuzzleClass
 
         puzzlePanels[0].SetActive(true);
         puzzlePanels[1].SetActive(false);
+
+        waiting = false;
+        startPattern = false;
     }
 
 
